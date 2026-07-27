@@ -15,6 +15,26 @@ A standalone skill for **Hermes Agent** that provides web search and web extract
 - **JSON Output** — Machine-parseable results for tool integration
 - **Independent** — Does not depend on any other installed skill
 
+## When to Use xngTool
+
+Use xngTool for:
+- **Current information** — events, news, status (things that change over time)
+- **Documentation lookup** — finding the latest docs, changelogs, API references
+- **Technical research** — libraries, frameworks, packages, version compatibility
+- **Web references** — URLs, links, citations to include in responses
+- **Verification** — confirming a fact that might have changed since training
+- **Discovery** — finding new resources, repos, articles, tutorials
+
+## When to Avoid xngTool
+
+Do NOT use xngTool for:
+- **Normal reasoning** — logic, math, code generation, analysis
+- **Tasks where internal knowledge is sufficient** — definitions, patterns, algorithms, syntax
+- **Simple factual recall** — dates you know, well-established facts
+- **Quick questions** — if you can answer it confidently, no need to search
+
+**Rule of thumb:** If you can answer it from memory, don't search. Search when you need fresh, external, or uncertain information.
+
 ## Installation
 
 ### Step 1: Ensure SearXNG is Running
@@ -131,7 +151,7 @@ This removes:
 #### Search
 
 ```bash
-# Basic search
+# Basic search (human-readable)
 python3 ~/.hermes/skills/xngTool/scripts/xngTool.py search "your query"
 
 # Search with JSON output (for tool integration)
@@ -139,9 +159,6 @@ python3 ~/.hermes/skills/xngTool/scripts/xngTool.py search "your query" --json
 
 # Search with more results
 python3 ~/.hermes/skills/xngTool/scripts/xngTool.py search "your query" --limit 10
-
-# Rich search with metadata
-python3 ~/.hermes/skills/xngTool/scripts/xngTool.py search "your query" --format rich
 ```
 
 #### Extract
